@@ -2,11 +2,12 @@
   "name": "leader-board",
   "version": "1.0.0",
   "description": "This is an awesome Leader Board",
-  "main": "webpack.config.js",
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gh-pages -d dist",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",

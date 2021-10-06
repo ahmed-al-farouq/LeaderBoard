@@ -3,6 +3,7 @@ const getData = async () => {
   const result = fetchData.json();
   const listContainer = document.getElementById('body');
   return result.then((data) => {
+    console.log(data.result.sort((a, b) => b - a));
     listContainer.innerHTML = '';
     return data.result.length
       ? data.result.map((item) => {

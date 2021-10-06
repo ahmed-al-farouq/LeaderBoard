@@ -104,3 +104,31 @@ main form div input:last-child {
   cursor: pointer;
   background-color: #e2e9f5;
 }
+
+@media screen and (max-width: 786px) {
+  main form {
+    height: 220px;
+  }
+
+  main h1 {
+    padding: 2px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Start Footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e2e9f5;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer span {
+  color: rgba(124, 2, 2, 0.767);
+  font-size: 25px;
+}

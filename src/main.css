@@ -56,6 +56,14 @@ main div.scores ul.body {
   border: 1px solid #3c00004f;
   margin: 10px 0;
   box-shadow: 0 0 4px 1px #3c00004f;
+  min-height: 200px;
+}
+
+main div.scores ul.body h2 {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 20px;
+  color: rgb(54, 54, 54);
 }
 
 main div.scores ul.body li {

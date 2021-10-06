@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
   },
   plugins: [new HtmlWebpackPlugin({
-    title:'Leader Board',
+    title: 'Leader Board',
     inject: 'body',
     filename: 'index.html',
   })],

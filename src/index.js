@@ -31,7 +31,8 @@ const createDOM = () => {
     </form>
   </main>
   `;
-  return document.body.innerHTML = structure;
+  document.body.innerHTML = structure;
+  return true;
 };
 
 createDOM();

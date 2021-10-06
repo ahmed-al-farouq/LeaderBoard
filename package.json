@@ -1,0 +1,34 @@
+{
+  "name": "leader-board",
+  "version": "1.0.0",
+  "description": "This is an awesome Leader Board",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmed-al-farouq/LeaderBoard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmed-al-farouq/LeaderBoard/issues"
+  },
+  "homepage": "https://github.com/ahmed-al-farouq/LeaderBoard#readme",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "devDependencies": {
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.1"
+  }
+}

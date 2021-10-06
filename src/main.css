@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 98%;
+  margin: auto;
+}
+
+main h1 {
+  font-size: 40px;
+  padding: 40px;
+  width: 100%;
+}
+
+main div.scores {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+}
+
+main div.scores .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main form h2,
+main div.scores .header h2 {
+  font-size: 22px;
+}
+
+main div.scores .header button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+main div.scores ul.body {
+  width: 100%;
+  list-style: none;
+  border: 1px solid #3c00004f;
+  margin: 10px 0;
+  box-shadow: 0 0 4px 1px #3c00004f;
+}
+
+main div.scores ul.body li {
+  padding: 5px;
+  font-size: 17px;
+}
+
+main div.scores ul.body li:nth-child(odd) {
+  background-color: #e2e9f5;
+}
+
+main form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+}
+
+main form div input {
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid black;
+  background-color: #e2e2e24f;
+  font-size: 13px;
+  padding: 3px 10px;
+}
+
+main form div input::placeholder {
+  color: rgb(65, 1, 1);
+}
+
+main form div input:last-child {
+  align-self: flex-end;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #e2e9f5;
+}

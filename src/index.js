@@ -14,7 +14,7 @@ const createDOM = () => {
         </button>
       </div>
       <ul class="body" id="body">
-        <h2>Please, click on refresh button above.</h2>
+        <h2>Please, click on the refresh button above.</h2>
       </ul>
     </div>  
     <form action="#" method="post" class="add-score">
@@ -26,6 +26,9 @@ const createDOM = () => {
       </div>
     </form>
   </main>
+  <footer>
+    Create By <span>&hearts;</span> Ahmed Al-Farouq
+  </footer>
   `;
   document.body.innerHTML = structure;
   const refreshBtn = document.getElementById('refresh');

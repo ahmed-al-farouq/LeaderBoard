@@ -1,11 +1,12 @@
 import './main.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 import sendData from './js/sendData.js';
 import getData from './js/getData.js';
 
 const createDOM = () => {
   const structure = `
+  <h1 class="title">Leader Board</h1>
   <main>
-    <h1 class="title">Leader Board</h1>
     <div class="scores">
       <div class="header">
         <h2>Recent Scores</h2>
@@ -28,6 +29,14 @@ const createDOM = () => {
   </main>
   <footer>
     Create By <span>&hearts;</span> Ahmed Al-Farouq
+    <div class="contact">
+      <a href="https://github.com/ahmed-al-farouq">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/ahmed-al-farouq/">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </footer>
   `;
   document.body.innerHTML = structure;

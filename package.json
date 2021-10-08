@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ahmed-al-farouq/LeaderBoard#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "gh-pages": "^3.2.3"
   },
   "devDependencies": {

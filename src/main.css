@@ -4,8 +4,32 @@
   box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a45cdf;
+  transition: 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0bff7;
+}
+
 body {
   font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -16,17 +40,18 @@ main {
   margin: auto;
 }
 
-main h1 {
-  font-size: 40px;
-  padding: 40px;
-  width: 100%;
+h1.title {
+  font-size: 30px;
+  padding: 15px 15px 15px 290px;
+  background: #f6f6f6;
+  margin: 0 0 40px 0;
+  color: #5e2a86d9;
 }
 
 main div.scores {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 400px;
 }
 
 main div.scores .header {
@@ -34,11 +59,13 @@ main div.scores .header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 main form h2,
 main div.scores .header h2 {
   font-size: 22px;
+  color: #5e2a86d9;
 }
 
 main div.scores .header button {
@@ -51,27 +78,94 @@ main div.scores .header button {
 }
 
 main div.scores ul.body {
-  width: 100%;
   list-style: none;
   border: 1px solid #3c00004f;
   margin: 10px 0;
   box-shadow: 0 0 4px 1px #3c00004f;
-  min-height: 200px;
+  width: 780px;
+  height: 150px;
+  grid-template-columns: 340px 440px;
+  grid-template-rows: 538px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 main div.scores ul.body h2 {
   text-align: center;
   margin-top: 60px;
-  font-size: 20px;
+  font-size: 19px;
   color: rgb(54, 54, 54);
 }
 
-main div.scores ul.body li {
-  padding: 5px;
-  font-size: 17px;
+main div.scores ul.body li.top-score {
+  grid-area: 1 / 1 / 10 / 2;
+  background-color: rgb(132, 122, 209) !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scaleY(1.07) scaleX(1.01);
+  box-shadow: 0 0 4px 1px #090940;
+  color: #fff;
+  font-weight: 500;
 }
 
-main div.scores ul.body li:nth-child(odd) {
+main div.scores ul.body li.top-score span.top {
+  background-image: url('./img/o-top.png');
+  background-position: center;
+  background-size: cover;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+
+main div.scores ul.body li.top-score img {
+  width: 115px;
+  display: block;
+  margin: 0 auto;
+}
+
+main div.scores ul.body li.top-score h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+main div.scores ul.body li.top-score span.name {
+  display: block;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main div.scores ul.body li.top-score span.score {
+  background: #ffffffbd;
+  padding: 20px 15px;
+  border-radius: 50%;
+  width: 60px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #7e46ab;
+}
+
+main div.scores ul.body li.other-scores {
+  overflow-y: scroll;
+}
+
+main div.scores ul.body li.other-scores li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+main div.scores ul.body li.other-scores img {
+  width: 50px;
+}
+
+main div.scores ul.body li.other-scores li:nth-child(odd) {
   background-color: #e2e9f5;
 }
 
@@ -105,14 +199,53 @@ main form div input:last-child {
   background-color: #e2e9f5;
 }
 
-@media screen and (max-width: 786px) {
-  main form {
-    height: 220px;
+@media screen and (max-width: 991px) {
+  h1.title {
+    padding: 15px;
+    text-align: center;
   }
 
-  main h1 {
-    padding: 2px;
-    margin-bottom: 25px;
+  main {
+    height: 900px;
+  }
+
+  main .scores {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  main div.scores ul.body {
+    width: 570px;
+    grid-template-columns: 250px 320px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1.title {
+    font-size: 25px;
+  }
+
+  main {
+    height: auto;
+  }
+
+  main form {
+    height: 250px;
+  }
+
+  main div.scores ul.body {
+    width: 390px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  main div.scores ul.body {
+    width: 270px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px;
   }
 }
 
@@ -126,9 +259,23 @@ footer {
   padding: 10px;
   font-size: 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer span {
   color: rgba(124, 2, 2, 0.767);
   font-size: 25px;
+}
+
+footer div.contact {
+  margin-left: 20px;
+}
+
+footer div.contact a {
+  color: #7e46ab;
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 2px;
 }

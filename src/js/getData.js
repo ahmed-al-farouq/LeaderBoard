@@ -3,6 +3,20 @@ import avatar2 from '../img/avatar2.png';
 import avatar3 from '../img/avatar1.png';
 import avatar4 from '../img/avatar.png';
 
+const sortScores = (result) => {
+  const scores = [];
+  result.map((item) => scores.push(item.score));
+  return scores.sort((a, b) => b - a);
+};
+
+const getScoresWithNames = (result, sortedScores) => {
+  const finalResult = [];
+  sortedScores.map((score) => result.map((item) => (item.score === score
+    ? finalResult.push({ user: item.user, score })
+    : false)));
+  return finalResult;
+};
+
 const getData = async () => {
   const fetchData = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6r99l8kbAG2oZF3XXVUS/scores');
   const result = fetchData.json();
@@ -10,11 +24,15 @@ const getData = async () => {
   listContainer.style.display = 'grid';
   listContainer.style.height = '540px';
   const avatars = [avatar2, avatar3, avatar4];
+  // Get Data
   return result.then((data) => {
     listContainer.innerHTML = '';
     const liContainer = document.createElement('li');
-    return data.result.length
-      ? data.result.map((item, index) => {
+    // Sort scores
+    const sortedScores = sortScores(data.result);
+    const finallData = getScoresWithNames(data.result, sortedScores);
+    return finallData.length
+      ? finallData.map((item, index) => {
         const li = document.createElement('li');
         if (index === 0) {
           li.innerHTML = `
@@ -35,7 +53,7 @@ const getData = async () => {
         liContainer.append(li);
         return listContainer.append(liContainer);
       })
-      : data.result;
+      : finallData;
   });
 };
 export default getData;

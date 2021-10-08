@@ -141,7 +141,7 @@ main div.scores ul.body li.top-score span.name {
 
 main div.scores ul.body li.top-score span.score {
   background: #ffffffbd;
-  padding: 20px 15px;
+  padding: 20px 0;
   border-radius: 50%;
   width: 60px;
   margin-top: 10px;
@@ -278,4 +278,14 @@ footer div.contact a {
   text-decoration: none;
   font-size: 25px;
   margin-left: 2px;
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    font-size: 18px;
+  }
+
+  footer div.contact a {
+    font-size: 22px;
+  }
 }

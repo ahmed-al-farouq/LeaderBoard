@@ -24,13 +24,14 @@ const getData = async () => {
   listContainer.style.display = 'grid';
   listContainer.style.height = '540px';
   const avatars = [avatar2, avatar3, avatar4];
-  // Get Data
+  // Get data
   return result.then((data) => {
     listContainer.innerHTML = '';
     const liContainer = document.createElement('li');
     // Sort scores
     const sortedScores = sortScores(data.result);
     const finallData = getScoresWithNames(data.result, sortedScores);
+    // Display result
     return finallData.length
       ? finallData.map((item, index) => {
         const li = document.createElement('li');

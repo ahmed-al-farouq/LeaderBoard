@@ -16,13 +16,8 @@ You can add your score and name. Compare yours with others
 # Get started
 1) Open your command
 2) Type "git clone https://github.com/ahmed-al-farouq/LeaderBoard.git"
-3) Enjoy!
-
-or
-
-1) Navigate to code tab
-2) Click on index.html
-3) Enjoy!
+3) npm i
+4) npm run start
 
 # Live Demo
 [Live-Dome](https://ahmed-al-farouq.github.io/LeaderBoard/)
